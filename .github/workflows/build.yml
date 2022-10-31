@@ -20,6 +20,8 @@ jobs:
         key: ${{ runner.os }}-nix-store-${{ hashFiles('flake.lock') }}
 
     - uses: cachix/install-nix-action@v18
+      with:
+        nix_path: nixpkgs=channel:nixos-unstable
 
     - run: ls /nix/store
 
