@@ -26,7 +26,11 @@ jobs:
       if: steps.nix-cache.outputs.cache-hit == 'true'
       run: nix-store --import < /tmp/nixcache
 
-    - uses: aabccd021/direnv-action@v1.0.6
+    - run: curl -sfL https://direnv.net/install.sh | bash
+
+    - run: direnv allow
+
+    - uses: aabccd021/direnv-action@v1.0.7
 
     - run: playwright pdf google.com a.pdf
 
