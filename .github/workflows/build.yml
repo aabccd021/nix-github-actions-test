@@ -20,12 +20,10 @@ jobs:
         key: ${{ runner.os }}-nix-store-${{ hashFiles('flake.lock') }}-${{ hashFiles('.github/workflows/build.yml') }}
 
     - uses: cachix/install-nix-action@v18
-      with:
-        nix_path: nixpkgs=channel:nixos-unstable
 
-    - run: nix-env -f '<nixpkgs>' -iA direnv
+    - run: nix-env -iA direnv
 
-    - run: nix-env -f '<nixpkgs>' -iA nix-direnv
+    - run: nix-env -iA nix-direnv
 
     - uses: HatsuneMiku3939/direnv-action@v1
 
