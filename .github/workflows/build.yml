@@ -30,9 +30,9 @@ jobs:
       with:
         nix_path: nixpkgs=channel:nixos-unstable
 
-    - run: nix-env --store file://$HOME/aabccd021 --file '<nixpkgs>' -iA direnv
+    - run: nix-env --store $HOME/aabccd021 --file '<nixpkgs>' -iA direnv
 
-    - run: nix-env --store file://$HOME/aabccd021 --file '<nixpkgs>' -iA nix-direnv
+    - run: nix-env --store $HOME/aabccd021 --file '<nixpkgs>' -iA nix-direnv
 
     - uses: HatsuneMiku3939/direnv-action@v1
 
