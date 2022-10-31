@@ -1,2 +1,1 @@
 # nix-github-actions-test
-
