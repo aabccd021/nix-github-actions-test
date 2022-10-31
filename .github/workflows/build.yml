@@ -29,4 +29,4 @@ jobs:
 
     - uses: HatsuneMiku3939/direnv-action@v1
 
-    - run: playwright --help
+    - run: playwright pdf google.com a.pdf
