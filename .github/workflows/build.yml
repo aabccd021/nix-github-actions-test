@@ -19,10 +19,6 @@ jobs:
         key: nix-${{ hashFiles('mypackages.nix') }}
         nix_file: 'flake.nix'
 
-    - uses: cachix/install-nix-action@v18
-      with:
-        nix_path: nixpkgs=channel:nixos-unstable
-
     - run: nix-env -f '<nixpkgs>' -iA direnv
 
     - run: nix-env -f '<nixpkgs>' -iA nix-direnv
