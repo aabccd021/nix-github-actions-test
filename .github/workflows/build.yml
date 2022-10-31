@@ -31,10 +31,13 @@ jobs:
     - run: playwright pdf google.com a.pdf
 
     - run: nix-store --optimise
+      if: steps.nix-cache.outputs.cache-hit != 'true'
 
     - run: nix-store --gc
+      if: steps.nix-cache.outputs.cache-hit != 'true'
 
     - run: nix store gc
+      if: steps.nix-cache.outputs.cache-hit != 'true'
 
     - name: Export Nix store cache
       if: steps.nix-cache.outputs.cache-hit != 'true'
