@@ -18,7 +18,7 @@ jobs:
       id: nix-cache
       with:
         path: /tmp/nixcache
-        key: ${{ runner.os }}-nix-store-${{ hashFiles('flake.lock') }}
+        key: ${{ runner.os }}-nix-store-${{ hashFiles('flake.lock', 'flake.nix') }}
 
     - uses: cachix/install-nix-action@v18
 
@@ -29,6 +29,10 @@ jobs:
     - uses: HatsuneMiku3939/direnv-action@v1
 
     - run: playwright pdf google.com a.pdf
+
+    - run: nix-store --gc
+
+    - run: nix store gc
 
     - name: Export Nix store cache
       if: steps.nix-cache.outputs.cache-hit != 'true'
