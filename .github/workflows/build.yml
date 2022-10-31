@@ -30,6 +30,8 @@ jobs:
 
     - run: playwright pdf google.com a.pdf
 
+    - run: nix-store --optimise
+
     - run: nix-store --gc
 
     - run: nix store gc
