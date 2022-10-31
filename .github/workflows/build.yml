@@ -17,7 +17,7 @@ jobs:
       uses: actions/cache@v3
       with:
         path: ~/aabccd021
-        key: ${{ runner.os }}-nix-store-${{ hashFiles('flake.lock') }}
+        key: ${{ runner.os }}-nix-store-v2-${{ hashFiles('flake.lock') }}
 
     - name: Fix Nix Store Permission
       shell: bash
