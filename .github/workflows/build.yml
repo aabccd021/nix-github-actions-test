@@ -21,6 +21,12 @@ jobs:
 
     - uses: cachix/install-nix-action@v18
 
-    - run: nix develop
+    - run: ls /nix/store
 
-    - run: playwright
+    - run: nix-env -f '<nixpkgs>' -iA direnv
+
+    - run: ls /nix/store
+
+    # - run: nix develop
+
+    # - run: playwright
