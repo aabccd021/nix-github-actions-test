@@ -17,7 +17,7 @@ jobs:
       shell: bash
       run: |
         sudo mkdir -p /nix/store
-        sudo chmod -R a+rwx /nix/store
+        sudo chmod -R 775 /nix/store
 
     - name: Setup Nix Store Cache
       uses: actions/cache@v3
