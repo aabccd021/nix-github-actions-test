@@ -17,7 +17,7 @@ jobs:
       uses: rikhuijzer/cache-install@v1.0.9
       with:
         key: nix-${{ hashFiles('mypackages.nix') }}
-        nix_file: 'flake.nix'
+        nix_file: 'mypackages.nix'
 
     - uses: cachix/install-nix-action@v18
       with:
