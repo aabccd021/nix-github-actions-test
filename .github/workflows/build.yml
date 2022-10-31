@@ -17,6 +17,7 @@ jobs:
       uses: mtoohey31/cache-flake-attrs@v2
       id: nix-cache
       with:
+        path: /tmp/nixcache
         key: ${{ runner.os }}-nix-store-${{ hashFiles('flake.lock', 'flake.nix') }}
 
     - uses: HatsuneMiku3939/direnv-action@v1
