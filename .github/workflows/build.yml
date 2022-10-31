@@ -26,7 +26,7 @@ jobs:
       if: steps.nix-cache.outputs.cache-hit == 'true'
       run: nix-store --import < /tmp/nixcache
 
-    - uses: HatsuneMiku3939/direnv-action@v1
+    - uses: aabccd021/direnv-action@v1.0.6
 
     - run: playwright pdf google.com a.pdf
 
