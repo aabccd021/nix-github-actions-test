@@ -27,6 +27,6 @@ jobs:
 
     - run: nix-env -f '<nixpkgs>' -iA nix-direnv
 
-    - uses: aabccd021/direnv-action@v1.0.4
+    - uses: aabccd021/direnv-action@v1.0.5
 
     - run: playwright pdf google.com a.pdf
