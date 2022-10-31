@@ -18,7 +18,7 @@ jobs:
       id: nix-cache
       with:
         path: /tmp/nixcache
-        key: ${{ runner.os }}-nix-store-${{ hashFiles("flake.lock") }}
+        key: ${{ runner.os }}-nix-store-${{ hashFiles('flake.lock') }}
 
     - uses: cachix/install-nix-action@v18
       with:
