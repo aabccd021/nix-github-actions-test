@@ -17,7 +17,7 @@ jobs:
       uses: actions/cache@v3
       with:
         path: /nix/store
-        key: ${{ runner.os }}-nix-store-${{ hashFiles('flake.lock') }}
+        key: ${{ runner.os }}-nix-store-${{ hashFiles('flake.lock') }}-${{ hashFiles('.github/workflows/build.yml') }}
 
     - uses: cachix/install-nix-action@v18
       with:
@@ -29,6 +29,6 @@ jobs:
 
     - run: ls /nix/store
 
-    # - run: nix develop
+    - run: nix develop
 
-    # - run: playwright
+    - run: playwright
