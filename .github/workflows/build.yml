@@ -23,7 +23,7 @@ jobs:
       shell: bash
       run: |
         sudo mkdir --parents /nix/store
-        mkdir --parents ~/aabccd021
+        sudo mkdir --parents ~/aabccd021
         sudo cp --recursive ~/aabccd021 /nix/store
 
     - uses: cachix/install-nix-action@v18
@@ -41,8 +41,8 @@ jobs:
     - name: Fix Nix Store Permission Cleanup
       shell: bash
       run: |
-        rm -rf ~/aabccd021
-        mkdir ~/aabccd021
+        sudo rm -rf ~/aabccd021
+        sudo mkdir ~/aabccd021
         sudo cp --recursive /nix/store ~/aabccd021
 
 
