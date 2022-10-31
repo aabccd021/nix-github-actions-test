@@ -15,4 +15,4 @@ jobs:
 
     - uses: cachix/install-nix-action@v18
 
-    - run: nix develop --unpack
+    - run: nix develop
