@@ -1,8 +1,9 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable-small";
   };
  
+
 
   outputs = { self, nixpkgs }: with nixpkgs.legacyPackages.x86_64-linux; {
     devShell.x86_64-linux = mkShell {
