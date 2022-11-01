@@ -24,7 +24,7 @@ jobs:
 
     - name: Import Nix store cache
       if: steps.nix-cache.outputs.cache-hit == 'true'
-      run: nix-store --import < /tmp/nixcache > /dev/null 2>&1
+      run: nix-store --import < /tmp/nixcache
 
     - run: curl -sfL https://direnv.net/install.sh | bash
 
