@@ -13,7 +13,8 @@
       shellHook = ''
         export PLAYWRIGHT_BROWSERS_PATH=${playwright.browsers}
         export PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS=true
-        echo ${playwright.browsers}
+        [ "$(nix --version)" == "nix (Nix) 2.11.0" ] || exit 1
+        [ "$(direnv --version)" == "2.32.1" ] || exit 1
       '';
     };
   };
