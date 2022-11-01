@@ -14,15 +14,17 @@
         export PLAYWRIGHT_BROWSERS_PATH=${playwright.browsers}
         export PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS=true
         function assertEqual {
-          if [[ "$1" != "$2" ]]; then
-            echo -e "\033[0;31mInvalid version"
-            echo -e "\033[0;31mActual: $1"
-            echo -e "\033[0;31mExpected: $2"
-            exit 1
+          result="$(eval "$1")"
+          if [[ "$result" != "$2" ]]; then
+            echo -e "\033[0;31m"
+            echo -e "Invalid $1"
+            echo -e "Actual: $result"
+            echo -e "Expected: $2"
+            echo -e "\033[0m"
           fi
         }
-        assertEqual "$(nix --version)" "nix (Nix) 2.11.0" || exit 1
-        assertEqual "$(direnv --version)" "2.2.1" || exit 1
+        assertEqual "nix --version" "nix (Nix) 2.11.0" || exit 1
+        assertEqual "direnv --version" "2.32.1" || exit 1
       '';
     };
   };
