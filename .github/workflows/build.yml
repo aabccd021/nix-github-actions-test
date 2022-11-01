@@ -30,6 +30,8 @@ jobs:
 
     - run: echo "$PATH"
 
+    - run: echo "$PATH" | tr ':' '\n'
+
     - run: curl -sfL https://direnv.net/install.sh | bash
 
     - run: direnv allow
