@@ -32,7 +32,7 @@ jobs:
 
     - run: direnv allow
 
-    - uses: aabccd021/direnv-action@v1.0.7
+    - run: direnv export gha >> "$GITHUB_ENV"
 
     - run: playwright pdf google.com a.pdf
 
